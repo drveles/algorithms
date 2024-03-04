@@ -11,6 +11,6 @@ if (vasya_p_tree == masha_q_tree):
 elif ((max_vasya < min_masha and min_vasya < max_masha) or (max_masha < min_vasya and min_masha < max_vasya)):
     print((vasya_range * 2) + (masha_range * 2) + 2);
 else:
-    print( abs(min_vasya if min_vasya < min_masha else min_masha) + abs(max_vasya if max_vasya > max_masha else max_masha) + 1)
-    
+    print( abs(min_vasya if min_vasya < min_masha else min_masha) + abs(max_vasya if max_vasya > max_masha else max_masha) + 1);
+
 # ОК
