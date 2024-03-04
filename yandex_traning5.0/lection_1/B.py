@@ -25,3 +25,5 @@ else:
         need_goals += 1;
 
 print(need_goals);
+
+# OK, Artur S. helps me
