@@ -1,8 +1,4 @@
-numbers = [1, 2, 3, 4, 5]
+seq = input().split()
 
-def square(number):
-    return number * number
-
-squared_numbers_iterator = list(map(square, numbers))
-
-print(squared_numbers_iterator)  # Выведет: [1, 4, 9, 16, 25]
+for i in seq:
+    print(i[0], '.', sep='', end='')
