@@ -7,4 +7,6 @@ def main():
 if __name__ == "__main__":
     main()
 
-#WA
+# WA
+    
+# here needed dict()
