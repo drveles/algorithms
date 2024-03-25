@@ -1,6 +1,7 @@
 # My
 .vscode/
 .DS_Store
+*.txt
 
 # C
 # Prerequisites
