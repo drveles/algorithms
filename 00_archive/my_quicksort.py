@@ -1,10 +1,9 @@
-
 def myQuicksort(arr):
     len_arr = len(arr)
     if len_arr < 2:
         return arr
     
-    opora = arr.pop(len_arr // 2 )
+    opora = arr.pop(len_arr // 2)
     less = []
     greater = []
 
@@ -15,4 +14,3 @@ def myQuicksort(arr):
             greater.append(arr[id1])
     
     return(myQuicksort(less) + [opora] + myQuicksort(greater))
-

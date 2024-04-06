@@ -61,10 +61,8 @@ arrs = [[random.randint(-999, 999) for _ in range(1000)] for _ in range(1000)]
 
 if __name__ == "__main__":
     from timeit import default_timer
-    import colorama
 
-    timer = default_timer()
-    print(unit_tests(),(default_timer() - timer))
+    print(unit_tests())
     timer = default_timer()
     print(stress_tests(),(default_timer() - timer))
     timer = default_timer()
