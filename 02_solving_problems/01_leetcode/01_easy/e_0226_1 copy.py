@@ -4,7 +4,8 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
-    
+
+
 class Solution:
     def swap(self, root):
         if root:
@@ -18,4 +19,5 @@ class Solution:
 
         return root
 
-#OK 76%, 34%
+
+# OK 76%, 34%
