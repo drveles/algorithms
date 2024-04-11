@@ -3,6 +3,7 @@ class TrieNode:
         self.children = {}
         self.is_end_of_word = False
 
+
 class Trie:
     def __init__(self):
         self.root = TrieNode()
@@ -22,7 +23,7 @@ class Trie:
                 return False
             node = node.children[char]
         return node.is_end_of_word
-    
+
     def starts_with(self, prefix):
         node = self.root
         for char in prefix:
@@ -31,15 +32,15 @@ class Trie:
             node = node.children[char]
         return True
 
+
 # Пример использования
 trie = Trie()
 words = ["apple", "banana", "orange", "app"]
 for word in words:
     trie.insert(word)
 
-print(trie.search("apple")) 
-print(trie.search("banana")) 
-print(trie.search("pear")) 
-print(trie.starts_with("aap")) 
-print(trie.starts_with("app")) 
-
+print(trie.search("apple"))
+print(trie.search("banana"))
+print(trie.search("pear"))
+print(trie.starts_with("aap"))
+print(trie.starts_with("app"))
