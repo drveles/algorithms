@@ -15,3 +15,5 @@ if __name__ == "__main__":
     # print(Solution().longestSubarray([0, 0, 0, 0]))
     # print(Solution().longestSubarray([0, 1]))
     print(Solution().longestSubarray([1,1,0,1]))
+
+#OK, 81%, 26%
