@@ -23,3 +23,5 @@ class Solution:
             res.append(f"{temp}")
 
         return res
+    
+#OK
