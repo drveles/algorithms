@@ -12,7 +12,7 @@
 class Solution:
     def sortedListToBST(self, head: Optional[ListNode]) -> Optional[TreeNode]:
         temp_list = []
-        
+
         while head:
             temp_list.append(head.val)
             head = head.next
@@ -20,7 +20,7 @@ class Solution:
         temp_list.sort()
 
         def top_down(left_id, right_id):
-            if left_id > right_id: 
+            if left_id > right_id:
                 return None
 
             mid = (left_id + right_id) // 2
@@ -33,4 +33,4 @@ class Solution:
         return top_down(0, len(temp_list) - 1)
 
 
-#OK, 99%, 11%
+# OK, 99%, 11%
