@@ -1,15 +1,12 @@
-x = 198
-y = 201
+_ = input()
+shells = list(map(int, input().split()))
+even = True # четное
 
-print(bin(x))
-print(bin(y))
+for shell in shells: 
+    temp = shell % 2
+    if temp and not even:
+        even = True
+    elif temp and even:
+        even = False
 
-x ^= y
-print(x, bin(x))
-print(y, bin(y))
-y ^= x
-print(x, bin(x))
-print(y, bin(y))
-x ^= y
-print(x, bin(x))
-print(y, bin(y))
+print("YES" if even else "NO")
