@@ -11,7 +11,7 @@ class HitCounter:
         self.hits.append(timestamp)
 
     def getHits(self, timestamp: int) -> int:
-        return len(self.hits) - bisect_left(self.hits, timestamp - 300)
+        return len(self.hits) - bisect_left(self.hits, timestamp - 299)
 
 class TestHitCounter(unittest.TestCase):
     def test_single_hit(self):
