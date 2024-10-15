@@ -4,8 +4,12 @@ class Solution:
 
         for id, el in enumerate(nums):
             if target - el in nums_dict:
-                return (nums_dict[target - el], id,)
+                return (
+                    nums_dict[target - el],
+                    id,
+                )
             nums_dict[el] = id
 
-#OK 
+
+# OK
 # time 70%, mem 41%
