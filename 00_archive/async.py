@@ -4,7 +4,7 @@ import time
 
 async def process_element(el):
     print(f"Processing {el}")
-    await asyncio.sleep(5 - el)  # Simulate work with a sleep
+    await asyncio.sleep(5 - el)
 
 
 async def main():
