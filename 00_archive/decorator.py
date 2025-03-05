@@ -6,18 +6,18 @@ def decorator_with_params(parameter: str):
         def wrapper(*args, **kwargs):
             print(f'decorator {parameter=}')
             print(f'{args=},{kwargs=}')
-            return func(args, kwargs)
+            return func(*args, **kwargs)
         return wrapper
     return main_wrapper
 
 
 @decorator_with_params('some parameter')
-def foo(kwarg):
-    print(f'Insade function with {kwarg=}')
+def foo(a, *args, **kwargs):
+    print(f'Insade function with {a=}, {args}, {kwargs}')
 
 
 def main():
-    foo('arg', kwarg='kwarg')
+    foo(1, 2, b=3)
 
 
 if __name__ == '__main__':
