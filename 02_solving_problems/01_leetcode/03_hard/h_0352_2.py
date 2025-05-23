@@ -11,16 +11,16 @@ class SummaryRanges:
         for el in self.elements:
             if el in seen:
                 continue
+            seen.add(el)
             left = right = el
             while el - 1 in self.elements:
-                seen.add(el - 1)
-                left = el - 1
                 el -= 1
+                seen.add(el)
+                left = el
             while el + 1 in self.elements:
-                seen.add(el + 1)
-                right = el + 1
                 el += 1
-            seen.add(el)
+                seen.add(el)
+                right = el
             idx = bisect.bisect(result, [left, right])
             result.insert(idx, [left, right])
         return result
