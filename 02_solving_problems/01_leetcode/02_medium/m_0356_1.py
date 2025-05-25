@@ -11,12 +11,7 @@ def isReflected(points: list[list[int]]) -> bool:
 
     for x, y in points:
         max_x, min_x = max(max_x, x), min(min_x, x)
-        unique_points.add(
-            (
-                x,
-                y,
-            )
-        )
+        unique_points.add((x, y))
 
     summ_x = max_x + min_x
 
@@ -28,23 +23,22 @@ def isReflected(points: list[list[int]]) -> bool:
 
 
 if __name__ == "__main__":
+    # Существует линия x = 0, которая симметрична для всех точек.
     points = [[1, 1], [-1, 1], [2, 3], [-2, 3], [0, 5]]
-    # Ожидаемый результат: True
-    # Пояснение: Существует линия x = 0, которая симметрична для всех точек.
-    print(isReflected(points))
+    assert isReflected(points) == True
+
+   # Точка [3, 2] не имеет симметричной точки относительно линии.
     points = [[1, 1], [-1, 1], [3, 2], [-2, 2], [0, 5]]
-    print(isReflected(points))
-    # Ожидаемый результат: False
-    # Пояснение: Точка [3, 2] не имеет симметричной точки относительно линии.
+    assert isReflected(points) == False
+
+    # Ожидаемый результат: True
     points = [[2, 1], [2, 3], [2, 5], [2, 7]]
-    print(isReflected(points))
-    # Ожидаемый результат: True
-    # Пояснение: Все точки уже находятся на линии x = 2, линия симметрии совпадает с ними.
+    assert isReflected(points) == True
+
+    # Все точки уже находятся на линии x = 2, линия симметрии совпадает с ними.
     points = [[1, 2], [-1, 2], [3, 4], [-3, 4], [5, 6], [-5, 6]]
-    print(isReflected(points))
-    # Ожидаемый результат: True
-    # Пояснение: Линия симметрии x = 0 для всех точек.
+    assert isReflected(points) == True
+
+    # Есть линия симметрии x = 0 для всех точек.
     points = [[3, 5], [-3, 5], [6, 2], [-6, 2], [4, 1], [-4, 1], [2, 0], [-2, 0]]
-    print(isReflected(points))
-    # Ожидаемый результат: True
-    # Пояснение: Линия симметрии находится на x = 0 для всех точек.
+    assert isReflected(points) == True
