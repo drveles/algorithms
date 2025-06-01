@@ -2,6 +2,7 @@
 .vscode/
 .DS_Store
 *.txt
+.idea/
 
 # C
 # Prerequisites
