@@ -44,8 +44,8 @@ def load_series_from_csv(filename: str = "./series.csv") -> pd.Series:
     :param filename: Имя файла
     :return: Объект pandas.Series, считанный из файла
     """
-    df = pd.read_csv(filename, header=None)
-    return df.squeeze("columns")
+    dataframe = pd.read_csv(filename, header=None)
+    return dataframe.squeeze("columns")
 
 
 def prepare_data(filename: str = './series.csv') -> pd.Series:
@@ -79,9 +79,65 @@ def print_data_params(series: pd.Series) -> None:
     print("Стандартное отклонение:", series.std())
 
 
+def visualize_series_data(series: pd.Series) -> None:
+    """
+    Визуализирует данные из объекта Series, создавая линейный график и гистограмму.
+    Линейный график показывает распределение значений по индексу,
+    а гистограмма отображает частотное распределение значений, округленных до сотен.
+    :param series: Объект pandas.Series для визуализации
+    """
+    plt.plot(series, label='Series')
+    plt.title('Линейный график данных Series')
+    plt.xlabel('Индекс')
+    plt.ylabel('Значение')
+    plt.legend()
+    plt.show()
+
+    rounded_series = series.round(-2)
+    plt.hist(rounded_series, bins=50, edgecolor='black')
+    plt.title('Гистограмма данных Series (округлено до сотен)')
+    plt.xlabel('Значение')
+    plt.ylabel('Частота')
+    plt.show()
+
+
+def create_dataframe(series: pd.Series) -> pd.DataFrame:
+    """
+    Создает DataFrame из объекта Series и добавляет два столбца:
+    один с отсортированными значениями по возрастанию и другой по убыванию.
+    :param series: Объект pandas.Series для преобразования
+    :return: DataFrame с оригинальными и отсортированными данными
+    """
+    dataframe = pd.DataFrame({
+        'Original': series,
+        'Ascending': series.sort_values().values,
+        'Descending': series.sort_values(ascending=False).values
+    })
+    return dataframe
+
+
+def visualize_sorted_dataframes(dataframe: pd.DataFrame) -> None:
+    """
+    Визуализирует данные из DataFrame, создавая два линейных графика.
+    Один график отображает значения, отсортированные по возрастанию,
+    а другой по убыванию, для сравнения распределения данных.
+    :param dataframe: DataFrame, содержащий отсортированные и оригинальные данные
+    """
+    plt.plot(dataframe['Ascending'], label='Ascending')
+    plt.plot(dataframe['Descending'], label='Descending')
+    plt.title('Линейные графики отсортированных данных')
+    plt.xlabel('Индекс')
+    plt.ylabel('Значение')
+    plt.legend()
+    plt.show()
+
+
 def main():
     series = prepare_data()
     print_data_params(series)
+    visualize_series_data(series)
+    dataframe = create_dataframe(series)
+    visualize_sorted_dataframes(dataframe)
 
 
 if __name__ == '__main__':
